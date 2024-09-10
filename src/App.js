@@ -11,6 +11,8 @@ import repo from './imgs/repo.svg';
 import Logo from './components/logo-com';
 import daemawiki_logo from './imgs/daemawiki-logo.svg';
 import repo_logo from './imgs/repo-logo.svg';
+import awack from './imgs/awack.svg';
+import awack_logo from './imgs/awack-logo.svg';
 
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -144,7 +146,7 @@ const ProjectsTitle = styled.div`
   padding-left: 97px;
 `;
 
-const DaemawikiProjects = styled.div`
+const Projects = styled.div`
   display: flex;
   justify-content: left;
   gap: 20px;
@@ -153,7 +155,7 @@ const DaemawikiProjects = styled.div`
   color: #1C194A;
 `;
 
-const DaemawikiProjectsImg = styled.img`
+const ProjectsImg = styled.img`
   padding-left: 97px;
   width: 600px;
 `;
@@ -215,7 +217,6 @@ const ProjectLogo = styled.img`
   height: 60px;
   object-fit: contain;
   transition: transform 0.3s ease;
-  margin-left: 380px;
 
   &:hover {
     transform: scale(1.1);
@@ -231,11 +232,13 @@ const ProjectTitleLogoContainer = styled.div`
   display: flex;
   align-items: center;
   padding-bottom: 15px;
+  justify-content: space-between;
 `;
 
 const ProjectTitleLogoContainerLeft = styled(ProjectTitleLogoContainer)`
   justify-content: flex-end;
   color: #1C194A;
+  justify-content: space-between;
 `;
 
 const ProjectContentLeft = styled.div`
@@ -342,8 +345,8 @@ function App() {
         <div>
           <ProjectsTitle>Projects</ProjectsTitle>
 
-          <DaemawikiProjects>
-            <DaemawikiProjectsImg src={daemawiki} alt="daema" />
+          <Projects>
+            <ProjectsImg src={daemawiki} alt="daema" />
 
             <div>
               <ProjectTitleLogoContainer>
@@ -374,7 +377,7 @@ function App() {
                   github.com/daemawiki/claude
               </ProjectLink>
             </div>
-          </DaemawikiProjects>
+          </Projects>
 
           <RepoProjects>
             <div>
@@ -413,6 +416,40 @@ function App() {
             </div>
             <RepoProjectsImg src={repo} alt="repo" />
           </RepoProjects>
+
+          <Projects>
+            <ProjectsImg src={awack} alt="awack" />
+
+            <div>
+              <ProjectTitleLogoContainer>
+                <ProjectTitle>
+                  Awack
+                </ProjectTitle>
+                
+                <ProjectLogo src={awack_logo} alt='awack' />
+              </ProjectTitleLogoContainer>
+              
+              <Line />
+              <ProjectDescription>
+                  Awack is DSM 
+                  <br />
+                  wake-up song request platform :]
+              </ProjectDescription>
+              <ProjectDate>
+                2024.04. ~ 2024.05.
+              </ProjectDate>
+
+              <ProjectStack>
+                <Logo text='Spring MVC' />
+                <Logo text='Java' cornerRadius={30} />
+                <Logo text='MySQL' />
+              </ProjectStack>
+
+              <ProjectLink href="https://github.com/A-wack/A-wack-Backend_v2" target="_blank">
+                  github.com/A-wack/backend
+              </ProjectLink>
+            </div>
+          </Projects>
 
           <MarginDiv>
           </MarginDiv>
