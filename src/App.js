@@ -346,8 +346,9 @@ function App() {
           <ProjectsTitle>Projects</ProjectsTitle>
 
           <Projects>
+          <a href='https://usadapekora.notion.site/b524bc3e04104ff2a5404bf3815750c0?pvs=4' target="_blank" rel="noreferrer">
             <ProjectsImg src={daemawiki} alt="daema" />
-
+          </a>
             <div>
               <ProjectTitleLogoContainer>
                 <ProjectTitle>
@@ -414,12 +415,15 @@ function App() {
                 </ProjectLink>
               </ProjectContentLeft>
             </div>
-            <RepoProjectsImg src={repo} alt="repo" />
+            <a href='http://usadapekora.notion.site' target="_blank" rel="noreferrer">
+              <RepoProjectsImg src={repo} alt="repo" />
+            </a>
           </RepoProjects>
 
           <Projects>
+          <a href='https://usadapekora.notion.site/Awack-f41843e631b54928987daf8a55fc43e0?pvs=4' target="_blank" rel="noreferrer">
             <ProjectsImg src={awack} alt="awack" />
-
+          </a>
             <div>
               <ProjectTitleLogoContainer>
                 <ProjectTitle>
