@@ -14,6 +14,7 @@ import repo_logo from './imgs/repo-logo.svg';
 
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Line from './components/Line';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
@@ -167,12 +168,6 @@ const RepoProjects = styled.div`
 
 const RepoProjectsImg = styled.img`
   width: 600px;
-`;
-
-const Line = styled.div`
-  width: 630px;
-  height: 1.5px;
-  background-color: #DFDCDC;
 `;
 
 const ProjectTitle = styled.div`
