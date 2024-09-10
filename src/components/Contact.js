@@ -7,7 +7,7 @@ const ContactContainer = styled.div`
     font: 'Pretendard', sans-serif;
     padding: 2rem 0;
     text-align: center;
-    height: 1250px
+    height: 1350px
 `;
 
 const ContactTitle = styled.p`
