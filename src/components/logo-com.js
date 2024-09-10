@@ -5,21 +5,21 @@ const Logo = ({
   strokeColor = "#BEBEBE",
   fillColor = "#1C194A",
   backgroundColor = "transparent", // New prop for background color
-  fontSize = 52.5,
+  fontSize = 25,
   fontFamily = "'Apple SD Gothic Neo', sans-serif",
   fontWeight = "bold",
   cornerRadius = 6.75,
-  padding = 38  // Fixed padding on each side
+  padding = 28,
 }) => {
   const textRef = useRef(null);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 93 });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 55 });
 
   useEffect(() => {
     if (textRef.current) {
       const bbox = textRef.current.getBBox();
       setDimensions({
         width: Math.ceil(bbox.width + padding * 2),
-        height: 93  // Fixed height
+        height: 55 
       });
     }
   }, [text, fontSize, fontFamily, fontWeight, padding]);
@@ -42,7 +42,7 @@ const Logo = ({
         rx={cornerRadius}
         stroke={strokeColor} 
         strokeOpacity="0.5" 
-        strokeWidth="1.5"
+        strokeWidth="1"
         fill="none"
       />
       <text
