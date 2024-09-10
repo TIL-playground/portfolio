@@ -19,6 +19,7 @@ const ContactContent = styled.p`
     font-size: 50px;
     font-weight: 50;
     line-height: 1;
+    padding-top: 100px;
 `;
 
 const HoverEventTag = styled.div`
