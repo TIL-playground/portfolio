@@ -266,13 +266,15 @@ function App() {
       { threshold: 0.5 }
     );
 
-    if (textRef.current) {
-      observer.observe(textRef.current);
+    const currentTextRef = textRef.current;
+
+    if (currentTextRef) {
+      observer.observe(currentTextRef);
     }
 
     return () => {
-      if (textRef.current) {
-        observer.unobserve(textRef.current);
+      if (currentTextRef) {
+        observer.unobserve(currentTextRef);
       }
     };
   }, []);
