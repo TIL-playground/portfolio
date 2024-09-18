@@ -11,11 +11,6 @@ const Contact = () => {
     "tmddnjsrla99@gmail.com",
   ];
 
-  const links = [
-    "https://github.com/ori0o0p",
-    "https://linkedin.com/in/ori0o0p/",
-  ];
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopy(false);
