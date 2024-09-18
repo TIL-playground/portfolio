@@ -11,6 +11,11 @@ const Contact = () => {
     "tmddnjsrla99@gmail.com",
   ];
 
+  const links = [
+    "https://github.com/ori0o0p",
+    "https://linkedin.com/in/ori0o0p/",
+  ];
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopy(false);
@@ -26,7 +31,7 @@ const Contact = () => {
       <ContactContent>
         {info.map((text, index) => (
           <HoverEventTag key={index} onClick={() => setCopy(true)}>
-            {text}
+            <span onClick={() => copyToClipboard(text)}>{text}</span>
           </HoverEventTag>
         ))}
       </ContactContent>
@@ -36,6 +41,10 @@ const Contact = () => {
 };
 
 export default Contact;
+
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text);
+}
 
 const ContactContainer = styled.div`
   background-color: black;
