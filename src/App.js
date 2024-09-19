@@ -8,7 +8,6 @@ import velog from "./imgs/Veloglogo.png";
 import medium from "./imgs/Mediumlogo.png";
 import daemawiki from "./imgs/daema.svg";
 import repo from "./imgs/repo.svg";
-import Logo from "./components/logo-com";
 import daemawiki_logo from "./imgs/daemawiki-logo.svg";
 import repo_logo from "./imgs/repo-logo.svg";
 import awack from "./imgs/awack.svg";
@@ -16,7 +15,7 @@ import awack_logo from "./imgs/awack-logo.svg";
 
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Line from "./components/Line";
+import Project from "./components/Project";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
@@ -144,106 +143,6 @@ const ProjectsTitle = styled.div`
   font-weight: 500;
   padding-top: 120px;
   padding-left: 97px;
-`;
-
-const Projects = styled.div`
-  display: flex;
-  justify-content: left;
-  gap: 20px;
-  margin-top: 50px;
-  padding-right: 97px;
-  color: #1c194a;
-`;
-
-const ProjectsImg = styled.img`
-  padding-left: 97px;
-  width: 600px;
-`;
-
-const RepoProjects = styled.div`
-  display: flex;
-  justify-content: right;
-  gap: 20px;
-  margin-top: 50px;
-  padding-right: 97px;
-`;
-
-const RepoProjectsImg = styled.img`
-  width: 600px;
-`;
-
-const ProjectTitle = styled.div`
-  font: 37px "Pretendard", sans-serif;
-  font-weight: 530;
-`;
-
-const ProjectTitleLeft = styled(ProjectTitle)`
-  display: flex;
-  justify-content: flex-end;
-`;
-
-const ProjectDescription = styled.div`
-  margin-top: 20px;
-  font: 30px "Pretendard", sans-serif;
-  font-weight: 500;
-`;
-
-const ProjectDate = styled.div`
-  margin-top: 20px;
-  font: 25px "Pretendard", sans-serif;
-  font-weight: 500;
-`;
-
-const ProjectLink = styled.a`
-  margin-top: 20px;
-  font: 25px "Pretendard", sans-serif;
-  font-weight: 500;
-  text-decoration-line: none;
-  color: #1c194a;
-`;
-
-const ProjectStack = styled.div`
-  margin-top: 91px;
-  display: flex;
-  gap: 5px;
-`;
-
-const ProjectStackLeft = styled(ProjectStack)`
-  justify-content: flex-end;
-`;
-
-const ProjectLogo = styled.img`
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const ProjectLogoLeft = styled(ProjectLogo)`
-  margin-left: 0;
-  margin-right: 480px;
-`;
-
-const ProjectTitleLogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  padding-bottom: 15px;
-  justify-content: space-between;
-`;
-
-const ProjectTitleLogoContainerLeft = styled(ProjectTitleLogoContainer)`
-  justify-content: flex-end;
-  color: #1c194a;
-  justify-content: space-between;
-`;
-
-const ProjectContentLeft = styled.div`
-  justify-content: flex-end;
-  text-align: right;
 `;
 
 const MarginDiv = styled.div`
@@ -376,128 +275,45 @@ function App() {
         <div>
           <ProjectsTitle>Projects</ProjectsTitle>
 
-          <Projects>
-            <a
-              href="https://usadapekora.notion.site/b524bc3e04104ff2a5404bf3815750c0?pvs=4"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ProjectsImg src={daemawiki} alt="daema" />
-            </a>
-            <div>
-              <ProjectTitleLogoContainer>
-                <ProjectTitle>DaemaWiki</ProjectTitle>
+          <Project
+            imageSrc={daemawiki}
+            imageAlt="daema"
+            imageLink="https://usadapekora.notion.site/b524bc3e04104ff2a5404bf3815750c0?pvs=4"
+            title="DaemaWiki"
+            logoSrc={daemawiki_logo}
+            logoAlt="daemawiki"
+            description={`DaemaWiki is DSM\nwiki platform :>`}
+            date="2024.06. ~ ing"
+            stack={["Spring WebFlux", "Java", "MongoDB"]}
+            githubLink="https://github.com/daemawiki/claude"
+          />
 
-                <ProjectLogo src={daemawiki_logo} alt="daemawiki" />
-              </ProjectTitleLogoContainer>
+          <Project
+            alignRight
+            imageSrc={repo}
+            imageAlt="repo"
+            imageLink="http://usadapekora.notion.site"
+            title="Repo"
+            logoSrc={repo_logo}
+            logoAlt="repo logo"
+            description={`Repo is DSM\nresume platform :)`}
+            date="2024.05. ~ 2024.09."
+            stack={["Spring MVC", "Java", "MongoDB"]}
+            githubLink="https://github.com/dsm-repo/Whopper"
+          />
 
-              <Line />
-              <ProjectDescription>
-                DaemaWiki is DSM
-                <br />
-                wiki platform :&gt;
-              </ProjectDescription>
-              <ProjectDate>2024.06. ~ ing</ProjectDate>
-
-              <ProjectStack>
-                <Logo text="Spring WebFlux" />
-                <Logo text="Java" cornerRadius={30} />
-                <Logo text="MongoDB" />
-              </ProjectStack>
-
-              <ProjectLink
-                href="https://github.com/daemawiki/claude"
-                target="_blank"
-              >
-                github.com/daemawiki/claude
-              </ProjectLink>
-            </div>
-          </Projects>
-
-          <RepoProjects>
-            <div>
-              <ProjectTitleLogoContainerLeft>
-                <a
-                  href="https://www.dsm-repo.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <ProjectLogoLeft src={repo_logo} alt="repo logo" />
-                </a>
-
-                <ProjectTitleLeft>Repo</ProjectTitleLeft>
-              </ProjectTitleLogoContainerLeft>
-
-              <Line />
-
-              <ProjectContentLeft>
-                <ProjectDescription>
-                  Repo is DSM
-                  <br />
-                  resume platform :)
-                </ProjectDescription>
-                <ProjectDate>2024.05. ~ 2024.09.</ProjectDate>
-
-                <ProjectStackLeft>
-                  <Logo text="Spring MVC" />
-                  <Logo text="Java" cornerRadius={30} />
-                  <Logo text="MongoDB" />
-                </ProjectStackLeft>
-
-                <ProjectLink
-                  href="https://github.com/dsm-repo/Whopper"
-                  target="_blank"
-                >
-                  github.com/dsm-repo/Whopper
-                </ProjectLink>
-              </ProjectContentLeft>
-            </div>
-            <a
-              href="http://usadapekora.notion.site"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <RepoProjectsImg src={repo} alt="repo" />
-            </a>
-          </RepoProjects>
-
-          <Projects>
-            <a
-              href="https://usadapekora.notion.site/Awack-f41843e631b54928987daf8a55fc43e0?pvs=4"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ProjectsImg src={awack} alt="awack" />
-            </a>
-            <div>
-              <ProjectTitleLogoContainer>
-                <ProjectTitle>Awack</ProjectTitle>
-
-                <ProjectLogo src={awack_logo} alt="awack" />
-              </ProjectTitleLogoContainer>
-
-              <Line />
-              <ProjectDescription>
-                Awack is DSM
-                <br />
-                wake-up song request platform :]
-              </ProjectDescription>
-              <ProjectDate>2024.04. ~ 2024.05.</ProjectDate>
-
-              <ProjectStack>
-                <Logo text="Spring MVC" />
-                <Logo text="Java" cornerRadius={30} />
-                <Logo text="MySQL" />
-              </ProjectStack>
-
-              <ProjectLink
-                href="https://github.com/A-wack/A-wack-Backend_v2"
-                target="_blank"
-              >
-                github.com/A-wack/backend
-              </ProjectLink>
-            </div>
-          </Projects>
+          <Project
+            imageSrc={awack}
+            imageAlt="awack"
+            imageLink="https://usadapekora.notion.site/Awack-f41843e631b54928987daf8a55fc43e0?pvs=4"
+            title="Awack"
+            logoSrc={awack_logo}
+            logoAlt="awack"
+            description={`Awack is DSM\nwake-up song request platform :]`}
+            date="2024.04. ~ 2024.05."
+            stack={["Spring MVC", "Java", "MySQL"]}
+            githubLink="https://github.com/A-wack/A-wack-Backend_v2"
+          />
 
           <MarginDiv />
         </div>
