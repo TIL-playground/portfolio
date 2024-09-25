@@ -86,9 +86,13 @@ const NotionLink = styled.a`
   grid-row: 2 / 6;
   align-self: end;
   margin-top: 20px;
+  margin-bottom: 20px;
 
   &:hover {
+    cursor: pointer;
+    color: #000000;
     opacity: 0.6;
+    transition: opacity 0.6s ease;
   }
 `;
 
