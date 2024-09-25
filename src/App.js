@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
-import header from "./imgs/header.svg";
+import header from "./imgs/header2.svg";
 import github from "./imgs/GitHublogo.png";
 import linkedin from "./imgs/LinkedInlogo.png";
 import gmail from "./imgs/Gmaillogo.png";
@@ -286,6 +286,7 @@ function App() {
             date="2024.06. ~ ing"
             stack={["Spring WebFlux", "Java", "MongoDB"]}
             githubLink="https://github.com/daemawiki/claude"
+            notionLink="https://usadapekora.notion.site/b524bc3e04104ff2a5404bf3815750c0?pvs=4"
           />
 
           <Project
@@ -300,6 +301,7 @@ function App() {
             date="2024.05. ~ 2024.09."
             stack={["Spring MVC", "Java", "MongoDB"]}
             githubLink="https://github.com/dsm-repo/Whopper"
+            notionLink="http://usadapekora.notion.site"
           />
 
           <Project
@@ -313,6 +315,7 @@ function App() {
             date="2024.04. ~ 2024.05."
             stack={["Spring MVC", "Java", "MySQL"]}
             githubLink="https://github.com/A-wack/A-wack-Backend_v2"
+            notionLink="https://usadapekora.notion.site/Awack-f41843e631b54928987daf8a55fc43e0?pvs=4"
           />
 
           <MarginDiv />

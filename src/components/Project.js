@@ -18,6 +18,8 @@ const ProjectImage = styled.img`
   max-width: 600px;
   grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
   grid-row: 1 / span 5;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 `;
 
 const ProjectContent = styled.div`
@@ -77,6 +79,32 @@ const ProjectStack = styled.div`
   justify-content: ${props => props.alignRight ? 'flex-end' : 'flex-start'};
 `;
 
+const NotionLink = styled.a`
+  text-decoration-line: none;
+  color: #000000;
+  grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
+  grid-row: 1 / span 5;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
+const InnerText = styled.div`
+  font: 25px "Pretendard", sans-serif;
+  font-weight: 500;
+  text-align: ${props => props.alignRight ? 'right' : 'left'};
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1c194a;
+  white-space: pre-line;
+  line-height: 1.5;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
 const Project = ({
   alignRight,
   imageSrc,
@@ -87,11 +115,15 @@ const Project = ({
   description,
   date,
   stack,
-  githubLink
+  githubLink,
+  notionLink
 }) => {
   return (
     <ProjectContainer>
-      <ProjectImage src={imageSrc} alt={imageAlt} alignRight={alignRight} />
+      <NotionLink href={notionLink} target="_blank" rel="noopener noreferrer" alignRight={alignRight}>
+        <ProjectImage src={imageSrc} alt={imageAlt} alignRight={alignRight} />
+        <InnerText>자세히 보러 가기</InnerText>
+      </NotionLink>
       <ProjectContent alignRight={alignRight}>
         <ProjectTitleLogoContainer alignRight={alignRight}>
           {alignRight ? (
@@ -114,7 +146,7 @@ const Project = ({
             <Logo key={index} text={tech} cornerRadius={tech === 'Java' ? 30 : undefined} />
           ))}
         </ProjectStack>
-        <ProjectLink href={githubLink} target="_blank">
+        <ProjectLink href={githubLink} target="_blank" rel="noopener noreferrer">
           {githubLink.replace('https://', '')}
         </ProjectLink>
       </ProjectContent>
