@@ -17,7 +17,7 @@ const ProjectImage = styled.img`
   width: 100%;
   max-width: 600px;
   grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
-  grid-row: 1 / span 5;
+  grid-row: 1 / span 4;
   cursor: pointer;
   transition: transform 0.3s ease;
 `;
@@ -83,7 +83,9 @@ const NotionLink = styled.a`
   text-decoration-line: none;
   color: #000000;
   grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
-  grid-row: 1 / span 5;
+  grid-row: 2 / 6;
+  align-self: end;
+  margin-top: 20px;
 
   &:hover {
     opacity: 0.6;
@@ -94,8 +96,6 @@ const InnerText = styled.div`
   font: 25px "Pretendard", sans-serif;
   font-weight: 500;
   text-align: ${props => props.alignRight ? 'right' : 'left'};
-  margin-top: 20px;
-  margin-bottom: 20px;
   color: #1c194a;
   white-space: pre-line;
   line-height: 1.5;
@@ -120,9 +120,9 @@ const Project = ({
 }) => {
   return (
     <ProjectContainer>
+      <ProjectImage src={imageSrc} alt={imageAlt} alignRight={alignRight} />
       <NotionLink href={notionLink} target="_blank" rel="noopener noreferrer" alignRight={alignRight}>
-        <ProjectImage src={imageSrc} alt={imageAlt} alignRight={alignRight} />
-        <InnerText>자세히 보러 가기</InnerText>
+        <InnerText alignRight={alignRight}>자세히 보러 가기</InnerText>
       </NotionLink>
       <ProjectContent alignRight={alignRight}>
         <ProjectTitleLogoContainer alignRight={alignRight}>
