@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
-import header from "./imgs/header2.svg";
 import github from "./imgs/GitHublogo.png";
 import linkedin from "./imgs/LinkedInlogo.png";
 import gmail from "./imgs/Gmaillogo.png";
@@ -38,13 +37,6 @@ const PortfolioHeader = styled.header`
   position: relative;
 `;
 
-const HeaderImg = styled.img`
-  width: 1239px;
-  height: 585px;
-  position: absolute;
-  left: 60px;
-  top: 80px;
-`;
 
 const PortfolioBody = styled.main`
   background-color: black;
@@ -198,7 +190,6 @@ function App() {
       <GlobalStyle />
       <Portfolio>
         <PortfolioHeader>
-          <HeaderImg src={header} alt="header" />
         </PortfolioHeader>
         <PortfolioBody>
           <BodyText ref={textRef} isVisible={isVisible}>
