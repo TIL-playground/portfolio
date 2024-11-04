@@ -30,14 +30,6 @@ const Portfolio = styled.div`
   background-color: snow;
 `;
 
-const PortfolioHeader = styled.header`
-  background-color: snow;
-  width: 100%;
-  height: 790px;
-  position: relative;
-`;
-
-
 const PortfolioBody = styled.main`
   background-color: black;
   padding-top: 235px;
@@ -189,8 +181,6 @@ function App() {
     <>
       <GlobalStyle />
       <Portfolio>
-        <PortfolioHeader>
-        </PortfolioHeader>
         <PortfolioBody>
           <BodyText ref={textRef} isVisible={isVisible}>
             {text}
