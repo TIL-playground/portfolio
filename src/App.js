@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef, lazy } from "react";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
+import Toast from "./components/Toast";
 
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
@@ -7,17 +8,18 @@ const ProjectBlock = lazy(() => import("./block/ProjectBlock"));
 const IntroduceBlock = lazy(() => import("./block/IntroduceBlock"));
 const HyperlinkBlock = lazy(() => import("./block/HyperlinkBlock"));
 
-
 function App() {
   const [text, setText] = useState("");
   const [isVisible, setIsVisible] = useState(false);
+  const [showToast, setShowToast] = useState(false);
   const fullText = "Portfolio";
   const textRef = useRef(null);
+  const projectRef = useRef(null);
 
   useEffect(() => {
     const currentTextRef = textRef.current;
     const observerOptions = {
-      threshold: 0.5
+      threshold: 0.5,
     };
 
     const observer = new IntersectionObserver(([entry]) => {
@@ -34,6 +36,38 @@ function App() {
     return () => {
       if (currentTextRef) {
         observer.unobserve(currentTextRef);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const currentProjectRef = projectRef.current;
+    const observerOptions = {
+      threshold: 0.3,
+    };
+
+    const projectObserver = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setShowToast(true);
+        const toastTimer = setTimeout(() => {
+          setShowToast(false);
+        }, 5000);
+
+        return () => {
+          clearTimeout(toastTimer);
+        };
+      } else {
+        setShowToast(false);
+      }
+    }, observerOptions);
+
+    if (currentProjectRef) {
+      projectObserver.observe(currentProjectRef);
+    }
+
+    return () => {
+      if (currentProjectRef) {
+        projectObserver.unobserve(currentProjectRef);
       }
     };
   }, []);
@@ -70,7 +104,6 @@ function App() {
       <GlobalStyle />
       <Portfolio>
         <PortfolioBody>
-        
           <BodyText ref={textRef} isVisible={isVisible}>
             {text}
             <span className="cursor">|</span>
@@ -78,24 +111,22 @@ function App() {
 
           <BodyContent>
             <IntroduceBlock />
-` 
-            <HyperlinkBlock/ >
+            <HyperlinkBlock />
           </BodyContent>
-        
         </PortfolioBody>
 
-        <div>
+        <div ref={projectRef}>
           <ProjectsTitle>Projects</ProjectsTitle>
-
+        
           <ProjectBlock />
-
+          {showToast && (
+            <Toast>자세히 보기를 클릭해서 프로젝트를 자세하게 확인하세요!</Toast>
+          )}
           <MarginDiv />
         </div>
 
         <Contact />
-
         <Footer />
-
       </Portfolio>
     </>
   );
