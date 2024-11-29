@@ -175,7 +175,7 @@ function App() {
             logoSrc={founderz_logo}
             logoAlt="founderz logo"
             description={`Founderz is Blockchain-Based Startup Investment Platform :]`}
-            date="2024.04. ~ 2024.05."
+            date="2024.05. ~ 2024.11."
             stack={["Spring MVC", "Java", "MySQL"]}
             githubLink="https://github.com/teamFOUNDERZ/FOUNDERZ-Backend"
             notionLink="https://usadapekora.notion.site/14a3c1533f0d805db602c62898eecaf3"
