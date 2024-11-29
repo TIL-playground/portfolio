@@ -10,14 +10,14 @@ const IntroSection = styled.section`
 
 const ContentWrapper = styled.div`
   width: 100%;
-  max-width: 1044.05px; // 원래 하드코딩된 width와 유사
+  max-width: 1044.05px;
 `;
 
 const BodyTitle = styled.h1`
   font-size: 2.5rem;
   margin-bottom: 1.25rem;
   line-height: 1.5;
-  text-align: center;
+  text-align: left;
   width: 100%;
   max-width: 1044.05px;
 
