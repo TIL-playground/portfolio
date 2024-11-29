@@ -9,129 +9,12 @@ import daemawiki from "./imgs/daema.svg";
 import repo from "./imgs/repo.svg";
 import daemawiki_logo from "./imgs/daemawiki-logo.svg";
 import repo_logo from "./imgs/repo-logo.svg";
-import awack from "./imgs/awack.svg";
-import awack_logo from "./imgs/awack-logo.svg";
+import founderz from "./imgs/founderz.svg";
+import founderz_logo from "./imgs/founderz-logo.svg";
 
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Project from "./components/Project";
-
-const GlobalStyle = createGlobalStyle`
-  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-  
-  body {
-    font-family: 'Pretendard', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-`;
-
-const Portfolio = styled.div`
-  background-color: snow;
-`;
-
-const PortfolioBody = styled.main`
-  background-color: black;
-  padding-top: 235px;
-  padding-bottom: 235px;
-`;
-
-const blinkAnimation = keyframes`
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-`;
-
-const BodyText = styled.div`
-  font: 300px/1 "Pretendard", sans-serif;
-  font-weight: 200;
-  color: white;
-  text-align: center;
-  width: 1238px;
-  height: 315px;
-  margin: 0 auto;
-  opacity: ${(props) => (props.isVisible ? 1 : 0)};
-  transition: opacity 0.5s ease-in-out;
-
-  .cursor {
-    display: inline-block;
-    width: 3px;
-    margin-left: 5px;
-    animation: ${blinkAnimation} 1s infinite;
-  }
-`;
-
-const BodyContent = styled.div`
-  font-weight: 200;
-  color: white;
-  width: 1238px;
-  margin: 0 auto;
-  padding-top: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const BodyTitle = styled.h1`
-  font-size: 40px;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  text-align: center;
-  width: 1044.05px;
-`;
-
-const TitleBackgroundColor = styled.div`
-  background-color: #51abff;
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-`;
-
-const BodyContentDiv = styled.div`
-  padding-top: 45px;
-  font-size: 20px;
-  text-align: left;
-  width: 1044.05px;
-`;
-
-const PointColor = styled.span`
-  color: #51abff;
-  font-weight: 500;
-  display: inline;
-`;
-
-const HyperlinkContainer = styled.div`
-  max-width: 1044.05px;
-  padding-top: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 50px;
-`;
-
-const HyperlinkImg = styled.img`
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  margin: 40px;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
-
-const ProjectsTitle = styled.div`
-  color: #1c194a;
-  font: 70px/1 "Pretendard", sans-serif;
-  font-weight: 500;
-  padding-top: 120px;
-  padding-left: 97px;
-`;
-
-const MarginDiv = styled.div`
-  margin: 100px;
-`;
 
 function App() {
   const [text, setText] = useState("");
@@ -257,8 +140,8 @@ function App() {
 
           <Project
             imageSrc={daemawiki}
-            imageAlt="daema"
-            imageLink="https://usadapekora.notion.site/b524bc3e04104ff2a5404bf3815750c0?pvs=4"
+            imageAlt="daemawaki"
+            imageLink="https://daemawiki.xquare.com/"
             title="DaemaWiki"
             logoSrc={daemawiki_logo}
             logoAlt="daemawiki"
@@ -273,7 +156,7 @@ function App() {
             alignRight
             imageSrc={repo}
             imageAlt="repo"
-            imageLink="http://usadapekora.notion.site"
+            imageLink="https://www.dsm-repo.com/"
             title="Repo"
             logoSrc={repo_logo}
             logoAlt="repo logo"
@@ -285,17 +168,17 @@ function App() {
           />
 
           <Project
-            imageSrc={awack}
-            imageAlt="awack"
-            imageLink="https://usadapekora.notion.site/Awack-f41843e631b54928987daf8a55fc43e0?pvs=4"
-            title="Awack"
-            logoSrc={awack_logo}
-            logoAlt="awack"
-            description={`Awack is DSM\nwake-up song request platform :]`}
+            imageSrc={founderz}
+            imageAlt="founderz"
+            imageLink="https://founderz.xquare.app/"
+            title="Founderz"
+            logoSrc={founderz_logo}
+            logoAlt="founderz logo"
+            description={`Founderz is Blockchain-Based Startup Investment Platform :]`}
             date="2024.04. ~ 2024.05."
             stack={["Spring MVC", "Java", "MySQL"]}
-            githubLink="https://github.com/A-wack/A-wack-Backend_v2"
-            notionLink="https://usadapekora.notion.site/Awack-f41843e631b54928987daf8a55fc43e0?pvs=4"
+            githubLink="https://github.com/teamFOUNDERZ/FOUNDERZ-Backend"
+            notionLink="https://usadapekora.notion.site/14a3c1533f0d805db602c62898eecaf3"
           />
 
           <MarginDiv />
@@ -307,5 +190,122 @@ function App() {
     </>
   );
 }
+
+const GlobalStyle = createGlobalStyle`
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+  
+  body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+`;
+
+const Portfolio = styled.div`
+  background-color: snow;
+`;
+
+const PortfolioBody = styled.main`
+  background-color: black;
+  padding-top: 235px;
+  padding-bottom: 235px;
+`;
+
+const blinkAnimation = keyframes`
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+`;
+
+const BodyText = styled.div`
+  font: 300px/1 "Pretendard", sans-serif;
+  font-weight: 200;
+  color: white;
+  text-align: center;
+  width: 1238px;
+  height: 315px;
+  margin: 0 auto;
+  opacity: ${(props) => (props.isVisible ? 1 : 0)};
+  transition: opacity 0.5s ease-in-out;
+
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    margin-left: 5px;
+    animation: ${blinkAnimation} 1s infinite;
+  }
+`;
+
+const BodyContent = styled.div`
+  font-weight: 200;
+  color: white;
+  width: 1238px;
+  margin: 0 auto;
+  padding-top: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const BodyTitle = styled.h1`
+  font-size: 40px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  text-align: center;
+  width: 1044.05px;
+`;
+
+const TitleBackgroundColor = styled.div`
+  background-color: #51abff;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+`;
+
+const BodyContentDiv = styled.div`
+  padding-top: 45px;
+  font-size: 20px;
+  text-align: left;
+  width: 1044.05px;
+`;
+
+const PointColor = styled.span`
+  color: #51abff;
+  font-weight: 500;
+  display: inline;
+`;
+
+const HyperlinkContainer = styled.div`
+  max-width: 1044.05px;
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 50px;
+`;
+
+const HyperlinkImg = styled.img`
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  margin: 40px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const ProjectsTitle = styled.div`
+  color: #1c194a;
+  font: 70px/1 "Pretendard", sans-serif;
+  font-weight: 500;
+  padding-top: 120px;
+  padding-left: 97px;
+`;
+
+const MarginDiv = styled.div`
+  margin: 100px;
+`;
 
 export default App;
