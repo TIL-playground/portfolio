@@ -5,16 +5,11 @@ import linkedin from "./imgs/LinkedInlogo.png";
 import gmail from "./imgs/Gmaillogo.png";
 import velog from "./imgs/Veloglogo.png";
 import medium from "./imgs/Mediumlogo.png";
-import daemawiki from "./imgs/daema.svg";
-import repo from "./imgs/repo.svg";
-import daemawiki_logo from "./imgs/daemawiki-logo.svg";
-import repo_logo from "./imgs/repo-logo.svg";
-import founderz from "./imgs/founderz.svg";
-import founderz_logo from "./imgs/founderz-logo.svg";
 
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Project from "./components/Project";
+import ProjectBlock from "./block/ProjectBlock";
+import IntroduceBlock from "./block/IntroduceBlock";
 
 function App() {
   const [text, setText] = useState("");
@@ -70,31 +65,7 @@ function App() {
             <span className="cursor">|</span>
           </BodyText>
           <BodyContent>
-            <BodyTitle>
-              <TitleBackgroundColor>
-                더욱 효율적인 코드 작성
-              </TitleBackgroundColor>
-              을 지향하는 백엔드 개발자 김승원입니다. :)
-            </BodyTitle>
-            <BodyContentDiv>
-              <p>
-                스프링 웹 플럭스를 활용한
-                <PointColor> 비동기 논블로킹 웹 애플리케이션</PointColor> 개발에
-                전문성을 갖추고 있으며, 성능 최적화와 유지보수성 향상을
-                최우선으로 삼고 있습니다. 전교생이 사용하는 이력서 작성 플랫폼
-                프로젝트의 백엔드 파트를 주도하여
-                <PointColor> 대규모 트래픽을 안정적으로 처리</PointColor>할 수
-                있는 시스템 설계와 구현에 기여했습니다.
-              </p>
-              <p>
-                저는 
-                <PointColor>
-                  {" "}
-                  가독성 좋은 코드 작성과 시스템 성능 최적화 사이의 균형
-                </PointColor>
-                을 중요하게 여기며, 유연하고 확장성이 좋은 설계를 지향합니다. 앞으로도 지속적인 학습과 도전을 통해 가치 있는 개발자로 성장하는 것이 목표입니다.
-              </p>
-            </BodyContentDiv>
+            <IntroduceBlock />
             <HyperlinkContainer>
               <a
                 href="https://github.com/ori0o0p"
@@ -138,48 +109,7 @@ function App() {
         <div>
           <ProjectsTitle>Projects</ProjectsTitle>
 
-          <Project
-            imageSrc={daemawiki}
-            imageAlt="daemawaki"
-            imageLink="https://daemawiki.xquare.com/"
-            title="DaemaWiki"
-            logoSrc={daemawiki_logo}
-            logoAlt="daemawiki"
-            description={`DaemaWiki is DSM\nwiki platform :>`}
-            date="2024.06. ~ ing"
-            stack={["Spring WebFlux", "Java", "MongoDB"]}
-            githubLink="https://github.com/daemawiki/claude"
-            notionLink="https://usadapekora.notion.site/DSM-48506e0449a24fbea9b1e563f3be4f53"
-          />
-
-          <Project
-            alignRight
-            imageSrc={repo}
-            imageAlt="repo"
-            imageLink="https://www.dsm-repo.com/"
-            title="Repo"
-            logoSrc={repo_logo}
-            logoAlt="repo logo"
-            description={`Repo is DSM\nresume platform :)`}
-            date="2024.05. ~ 2024.09."
-            stack={["Spring MVC", "Java", "MongoDB"]}
-            githubLink="https://github.com/dsm-repo/Whopper"
-            notionLink="https://usadapekora.notion.site/DSM-243478eb505b4155a98dae7bae41ddb9"
-          />
-
-          <Project
-            imageSrc={founderz}
-            imageAlt="founderz"
-            imageLink="https://founderz.xquare.app/"
-            title="Founderz"
-            logoSrc={founderz_logo}
-            logoAlt="founderz logo"
-            description={`Founderz is Blockchain-Based Startup Investment Platform :]`}
-            date="2024.05. ~ 2024.11."
-            stack={["Spring MVC", "Java", "MySQL"]}
-            githubLink="https://github.com/teamFOUNDERZ/FOUNDERZ-Backend"
-            notionLink="https://usadapekora.notion.site/14a3c1533f0d805db602c62898eecaf3"
-          />
+          <ProjectBlock />
 
           <MarginDiv />
         </div>
@@ -244,34 +174,6 @@ const BodyContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
-
-const BodyTitle = styled.h1`
-  font-size: 40px;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  text-align: center;
-  width: 1044.05px;
-`;
-
-const TitleBackgroundColor = styled.div`
-  background-color: #51abff;
-  display: inline;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-`;
-
-const BodyContentDiv = styled.div`
-  padding-top: 45px;
-  font-size: 20px;
-  text-align: left;
-  width: 1044.05px;
-`;
-
-const PointColor = styled.span`
-  color: #51abff;
-  font-weight: 500;
-  display: inline;
 `;
 
 const HyperlinkContainer = styled.div`
