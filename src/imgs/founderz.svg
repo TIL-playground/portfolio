@@ -1,11 +1,11 @@
 <svg width="1920" height="1088" viewBox="0 0 1920 1088" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g clip-path="url(#clip0_56207_187)">
-<rect width="1920" height="1088" rx="5" fill="white"/>
-<mask id="path-2-inside-1_56207_187" fill="white">
+<rect width="1920" height="1088" rx="15" fill="white"/>
+<mask id="path-3-inside-1_56207_187" fill="white">
 <path d="M0 0H1920V72H0V0Z"/>
 </mask>
 <path d="M0 0H1920V72H0V0Z" fill="white"/>
-<path d="M1920 71H0V73H1920V71Z" fill="#EEEEEE" mask="url(#path-2-inside-1_56207_187)"/>
+<path d="M1920 71H0V73H1920V71Z" fill="#EEEEEE" mask="url(#path-3-inside-1_56207_187)"/>
 <path d="M360 43.7849V32.2151C360 30.0059 361.791 28.2151 364 28.2151H370.823V31.5269H365.572C364.744 31.5269 364.072 32.1985 364.072 33.0269V34.3441H370.137V37.6559H364.072V43.7849H360Z" fill="#1860F0"/>
 <path d="M386.82 36C386.82 41.1828 383.52 44 379.319 44C375.075 44 371.796 41.1613 371.796 36C371.796 30.8172 375.075 28 379.319 28C383.52 28 386.82 30.8172 386.82 36ZM382.619 36C382.619 33.1398 381.441 31.5699 379.319 31.5699C377.176 31.5699 375.997 33.1398 375.997 36C375.997 38.8602 377.176 40.4301 379.319 40.4301C381.441 40.4301 382.619 38.8602 382.619 36Z" fill="#1860F0"/>
 <path d="M397.502 28.2151H401.574V38.2151C401.574 41.7419 398.895 43.9785 394.909 43.9785C390.922 43.9785 388.265 41.7419 388.265 38.2151V28.2151H392.337V37.8495C392.337 39.3548 393.408 40.4301 394.909 40.4301C396.43 40.4301 397.502 39.3548 397.502 37.8495V28.2151Z" fill="#1860F0"/>
@@ -32,6 +32,7 @@
 <rect x="885" y="710" width="512" height="512" fill="url(#pattern2_56207_187)"/>
 </g>
 </g>
+<rect x="0.5" y="0.5" width="1919" height="1087" rx="14.5" stroke="#E9E6E6"/>
 <defs>
 <pattern id="pattern0_56207_187" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_56207_187" transform="scale(0.00195312)"/>
@@ -47,7 +48,7 @@
 <stop offset="1" stop-color="white"/>
 </linearGradient>
 <clipPath id="clip0_56207_187">
-<rect width="1920" height="1088" rx="5" fill="white"/>
+<rect width="1920" height="1088" rx="15" fill="white"/>
 </clipPath>
 <clipPath id="clip1_56207_187">
 <rect width="1920" height="1016" fill="white" transform="translate(0 72)"/>
