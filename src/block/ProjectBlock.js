@@ -5,6 +5,7 @@ import repo_logo from "../imgs/repo-logo.svg";
 import founderz_img from "../imgs/founderz.svg";
 import founderz_logo from "../imgs/founderz-logo.svg";
 import Project from "../components/Project";
+import { ProjectsTitle } from "../style/Styled";
 
 const projectArray = [
     {
@@ -50,24 +51,30 @@ const projectArray = [
 ]
 
 const ProjectBlock = () => {
-    return <div>
-        {projectArray.map((project) => (
-            <Project
-                key={project.title}
-                alignRight={project.alignRight || false}
-                imageSrc={project.imageSrc}
-                imageAlt={project.imageAlt}
-                title={project.title}
-                logoSrc={project.logoSrc}
-                logoAlt={project.logoAlt} 
-                description={project.description}
-                date={project.date}
-                stack={project.stack}
-                githubLink={project.githubLink}
-                notionLink={project.notionLink}
-            />
-        ))}
-    </div>
+    return (
+        <>
+            <ProjectsTitle>Projects</ProjectsTitle>
+
+            <>
+                {projectArray.map((project) => (
+                    <Project
+                        key={project.title}
+                        alignRight={project.alignRight || false}
+                        imageSrc={project.imageSrc}
+                        imageAlt={project.imageAlt}
+                        title={project.title}
+                        logoSrc={project.logoSrc}
+                        logoAlt={project.logoAlt} 
+                        description={project.description}
+                        date={project.date}
+                        stack={project.stack}
+                        githubLink={project.githubLink}
+                        notionLink={project.notionLink}
+                    />
+                ))}
+            </>
+        </>
+    )
 }
 
 export default ProjectBlock

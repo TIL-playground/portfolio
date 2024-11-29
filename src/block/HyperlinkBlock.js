@@ -3,29 +3,7 @@ import linkedin from "../imgs/LinkedInlogo.png";
 import gmail from "../imgs/Gmaillogo.png";
 import velog from "../imgs/Veloglogo.png";
 import medium from "../imgs/Mediumlogo.png";
-import styled from "styled-components";
-
-const HyperlinkContainer = styled.div`
-  max-width: 1044.05px;
-  padding-top: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 50px;
-`;
-
-const HyperlinkImg = styled.img`
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  margin: 40px;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`;
+import { HyperlinkContainer, HyperlinkImg } from '../style/Styled'
 
 const HyperlinkBlock = () => {
     return (
