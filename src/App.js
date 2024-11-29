@@ -266,7 +266,7 @@ function App() {
             date="2024.06. ~ ing"
             stack={["Spring WebFlux", "Java", "MongoDB"]}
             githubLink="https://github.com/daemawiki/claude"
-            notionLink="https://usadapekora.notion.site/b524bc3e04104ff2a5404bf3815750c0?pvs=4"
+            notionLink="https://usadapekora.notion.site/DSM-48506e0449a24fbea9b1e563f3be4f53"
           />
 
           <Project
@@ -281,7 +281,7 @@ function App() {
             date="2024.05. ~ 2024.09."
             stack={["Spring MVC", "Java", "MongoDB"]}
             githubLink="https://github.com/dsm-repo/Whopper"
-            notionLink="http://usadapekora.notion.site"
+            notionLink="https://usadapekora.notion.site/DSM-243478eb505b4155a98dae7bae41ddb9"
           />
 
           <Project
