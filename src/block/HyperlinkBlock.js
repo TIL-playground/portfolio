@@ -4,7 +4,6 @@ import gmail from "../imgs/Gmaillogo.png";
 import velog from "../imgs/Veloglogo.png";
 import medium from "../imgs/Mediumlogo.png";
 import styled from "styled-components";
-import React from "react";
 
 const HyperlinkContainer = styled.div`
   max-width: 1044.05px;
@@ -28,7 +27,7 @@ const HyperlinkImg = styled.img`
   }
 `;
 
-const HyperlinkBlock = React.memo(() => {
+const HyperlinkBlock = () => {
     return (
         <HyperlinkContainer>
               <a
@@ -68,6 +67,6 @@ const HyperlinkBlock = React.memo(() => {
               </a>
         </HyperlinkContainer>
     );
-});
+};
 
 export default HyperlinkBlock;

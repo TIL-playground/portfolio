@@ -1,11 +1,12 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, lazy } from "react";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import ProjectBlock from "./block/ProjectBlock";
-import IntroduceBlock from "./block/IntroduceBlock";
-import HyperlinkBlock from "./block/HyperlinkBlock";
+const Contact = lazy(() => import("./components/Contact"));
+const Footer = lazy(() => import("./components/Footer"));
+const ProjectBlock = lazy(() => import("./block/ProjectBlock"));
+const IntroduceBlock = lazy(() => import("./block/IntroduceBlock"));
+const HyperlinkBlock = lazy(() => import("./block/HyperlinkBlock"));
+
 
 function App() {
   const [text, setText] = useState("");
@@ -14,16 +15,17 @@ function App() {
   const textRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
     const currentTextRef = textRef.current;
+    const observerOptions = {
+      threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.unobserve(currentTextRef);
+      }
+    }, observerOptions);
 
     if (currentTextRef) {
       observer.observe(currentTextRef);
@@ -40,15 +42,27 @@ function App() {
     if (!isVisible) return;
 
     let index = 0;
-    const intervalId = setInterval(() => {
-      setText(fullText.slice(0, index));
-      index++;
-      if (index > fullText.length) {
-        clearInterval(intervalId);
-      }
-    }, 150);
+    let lastTime = 0;
+    const animationDuration = 150;
 
-    return () => clearInterval(intervalId);
+    const animate = (currentTime) => {
+      if (!lastTime) lastTime = currentTime;
+      const elapsed = currentTime - lastTime;
+
+      if (elapsed >= animationDuration) {
+        setText(fullText.slice(0, index + 1));
+        index++;
+        lastTime = currentTime;
+      }
+
+      if (index <= fullText.length) {
+        window.requestAnimationFrame(animate);
+      }
+    };
+
+    const animationId = window.requestAnimationFrame(animate);
+
+    return () => window.cancelAnimationFrame(animationId);
   }, [isVisible]);
 
   return (
@@ -154,4 +168,4 @@ const MarginDiv = styled.div`
   margin: 100px;
 `;
 
-export default App;
+export default React.memo(App);

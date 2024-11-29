@@ -5,7 +5,6 @@ import repo_logo from "../imgs/repo-logo.svg";
 import founderz_img from "../imgs/founderz.svg";
 import founderz_logo from "../imgs/founderz-logo.svg";
 import Project from "../components/Project";
-import React from "react";
 
 const projectArray = [
     {
@@ -50,7 +49,7 @@ const projectArray = [
     },
 ]
 
-const ProjectBlock = React.memo(() => {
+const ProjectBlock = () => {
     return <div>
         {projectArray.map((project) => (
             <Project
@@ -69,6 +68,6 @@ const ProjectBlock = React.memo(() => {
             />
         ))}
     </div>
-})
+}
 
 export default ProjectBlock

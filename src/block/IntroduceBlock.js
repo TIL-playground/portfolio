@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 const IntroSection = styled.section`
@@ -55,7 +54,7 @@ const PointColor = styled.span`
   font-weight: 500;
 `;
 
-const IntroduceBlock = React.memo(() => {
+const IntroduceBlock = () => {
     return (
         <IntroSection aria-label="개인 소개">
             <ContentWrapper>
@@ -85,6 +84,6 @@ const IntroduceBlock = React.memo(() => {
             </ContentWrapper>
         </IntroSection>
     );
-});
+};
 
 export default IntroduceBlock;
