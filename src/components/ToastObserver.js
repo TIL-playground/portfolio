@@ -1,63 +1,43 @@
-import React, { useRef, useState, useCallback, useEffect, memo } from 'react';
+import React, { useState, useEffect, memo, useCallback, useMemo } from 'react';
 import Toast from '../style/Styled';
 
 const ToastObserver = ({ children, message }) => {
   const [showToast, setShowToast] = useState(false);
-  const intersectionCountRef = useRef(0);
-  const observerRef = useRef(null);
-  const elementRef = useRef(null);
 
-  const handleIntersection = useCallback(([entry]) => {
-    if (entry.isIntersecting) {
-      intersectionCountRef.current += 1;
-      
-      if (intersectionCountRef.current > 0) {
-        setShowToast(true);
-      }
-    } else {
-      setShowToast(false);
-    }
+  const handleIntersect = useCallback((entries) => {
+    const [entry] = entries;
+    setShowToast(entry.isIntersecting);
   }, []);
+
+  const memoizedChildren = useMemo(() => children, [children]);
 
   useEffect(() => {
-    const options = {
-      threshold: 0.1
+    if (!('IntersectionObserver' in window)) return;
+
+    const targetElement = document.querySelector('[data-toast-target]');
+    if (!targetElement) return;
+
+    const observerOptions = {
+      threshold: 0.1, 
+      rootMargin: '0px'
     };
 
-    observerRef.current = new IntersectionObserver(handleIntersection, options);
-
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observerRef.current.observe(currentElement);
-    }
+    const observerInstance = new IntersectionObserver(handleIntersect, observerOptions);
+    observerInstance.observe(targetElement);
 
     return () => {
-      if (observerRef.current) {
-        if (currentElement) {
-          observerRef.current.unobserve(currentElement);
-        }
-        observerRef.current.disconnect();
+      if (observerInstance) {
+        observerInstance.disconnect();
       }
     };
-  }, [handleIntersection]);
-
-  const observeElement = useCallback((element) => {
-    if (element) {
-      elementRef.current = element;
-    }
-  }, []);
+  }, [handleIntersect]);
 
   return (
-    <div ref={observeElement}>
-      {children}
+    <div data-toast-target>
+      {memoizedChildren}
       {showToast && <Toast>{message}</Toast>}
     </div>
   );
 };
 
-export default memo(ToastObserver, (prevProps, nextProps) => {
-  return (
-    prevProps.children === nextProps.children && 
-    prevProps.message === nextProps.message
-  );
-});
+export default memo(ToastObserver);
