@@ -247,14 +247,22 @@ const BackToTopButton = styled.button`
 export { BackToTopButton, Copyright, FooterContent, FooterContainer }
 
 // Project 
+
 const ProjectContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 20px;
+  display: flex;
+  flex-direction: column;
   margin-top: 50px;
+  padding: 0 97px;
+  color: #1c194a;
+  gap: 10px 20px;
   padding-right: 97px;
   padding-left: 97px;
-  color: #1c194a;
+
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+  }
 `;
 
 const ProjectImage = styled.img`
@@ -264,22 +272,38 @@ const ProjectImage = styled.img`
   grid-row: 1 / span 4;
   cursor: pointer;
   transition: transform 0.3s ease;
+
+  @media (min-width: 1024px) {
+    order: 0;
+    grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
+    grid-row: 1 / span 4;
+  }
 `;
 
 const ProjectContent = styled.div`
   grid-column: ${props => props.alignRight ? '1 / 2' : '2 / 3'};
   text-align: ${props => props.alignRight ? 'right' : 'left'};
+
+  @media (min-width: 1024px) {
+    grid-column: ${props => props.alignRight ? '1 / 2' : '2 / 3'};
+    align-items: ${props => props.alignRight ? 'flex-end' : 'flex-start'};
+  }
 `;
 
 const ProjectTitleLogoContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 `;
 
 const ProjectTitle = styled.div`
   font: 37px "Pretendard", sans-serif;
   font-weight: 530;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
 `;
 
 const ProjectLogo = styled.img`
@@ -288,6 +312,11 @@ const ProjectLogo = styled.img`
   object-fit: contain;
   transition: transform 0.3s ease;
   margin-${props => props.alignRight ? 'right' : 'left'}: 20px;
+
+  @media (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+  }
 
   &:hover {
     transform: scale(1.1);
@@ -299,12 +328,20 @@ const ProjectDescription = styled.div`
   font: 30px "Pretendard", sans-serif;
   font-weight: 500;
   white-space: pre-line;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const ProjectDate = styled.div`
   margin-top: 20px;
   font: 25px "Pretendard", sans-serif;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const ProjectLink = styled.a`
@@ -313,6 +350,10 @@ const ProjectLink = styled.a`
   font-weight: 500;
   text-decoration-line: none;
   color: #1c194a;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 const ProjectStack = styled.div`
@@ -321,16 +362,27 @@ const ProjectStack = styled.div`
   display: flex;
   gap: 5px;
   justify-content: ${props => props.alignRight ? 'flex-end' : 'flex-start'};
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
 `;
 
 const NotionLink = styled.a`
   text-decoration-line: none;
   color: #000000;
-  grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
-  grid-row: 2 / 6;
   align-self: end;
   margin-top: 20px;
   margin-bottom: 20px;
+  align-self: ${props => props.alignRight ? 'flex-end' : 'flex-start'};
+  order: 0;
+
+  @media (min-width: 1024px) {
+    grid-column: ${props => props.alignRight ? '2 / 3' : '1 / 2'};
+    grid-row: 2 / 6;
+    align-self: end;
+  }
 
   &:hover {
     cursor: pointer;
@@ -348,6 +400,10 @@ const InnerText = styled.div`
   white-space: pre-line;
   line-height: 1.5;
 
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
   &:hover {
     opacity: 0.6;
   }
@@ -359,7 +415,12 @@ const Line = styled.div`
   background-color: #DFDCDC;
 `;
 
-export { Line, ProjectContainer, ProjectImage, InnerText, NotionLink, ProjectContent, ProjectLink, ProjectStack, ProjectDate, ProjectDescription, ProjectLogo, ProjectTitle, ProjectTitleLogoContainer};
+const CustomLine = styled(Line)`
+  width: 100%;
+  max-width: 630px;
+`;
+
+export { ProjectImage, ProjectContainer, ProjectContent, ProjectTitleLogoContainer, ProjectTitle, ProjectLogo, ProjectDescription, ProjectDate, ProjectLink, ProjectStack, NotionLink, InnerText, Line, CustomLine }
 
 const Toast = styled.div`
   background-color: rgba(20, 20, 20, 0.8);

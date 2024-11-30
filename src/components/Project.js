@@ -1,5 +1,5 @@
 import React from 'react';
-import { Line, ProjectContainer, ProjectImage, InnerText, NotionLink, ProjectContent, ProjectLink, ProjectStack, ProjectDate, ProjectDescription, ProjectLogo, ProjectTitle, ProjectTitleLogoContainer} from '../style/Styled';
+import { Line, ProjectContainer, ProjectContent, ProjectImage, InnerText, NotionLink, ProjectLink, ProjectStack, ProjectDate, ProjectDescription, ProjectLogo, ProjectTitle, ProjectTitleLogoContainer } from '../style/Styled';
 import Logo from './Logo';
 
 const Project = ({
@@ -17,9 +17,9 @@ const Project = ({
 }) => {
   return (
     <ProjectContainer>
-      <ProjectImage src={imageSrc} alt={imageAlt} alignRight={alignRight} />
+      <ProjectImage src={imageSrc} alt={imageAlt} alignRight={alignRight} />      
       <NotionLink href={notionLink} target="_blank" rel="noopener noreferrer" alignRight={alignRight}>
-        <InnerText alignRight={alignRight}>자세히 보러 가기</InnerText>
+          <InnerText alignRight={alignRight}>자세히 보러 가기</InnerText>
       </NotionLink>
       <ProjectContent alignRight={alignRight}>
         <ProjectTitleLogoContainer alignRight={alignRight}>
@@ -47,6 +47,7 @@ const Project = ({
           {githubLink.replace('https://', '')}
         </ProjectLink>
       </ProjectContent>
+      
     </ProjectContainer>
   );
 };
