@@ -156,25 +156,36 @@ const ContactContainer = styled.div`
   color: white;
   font-family: "Pretendard", sans-serif;
   padding: 2rem 0;
-  text-align: center;
-  height: 1350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 1550px;
 `;
 
 const ContactTitle = styled.p`
   font-size: 200px;
   font-weight: 300;
+  text-align: center;
+`;
+
+const ContactContentWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 100px;
 `;
 
 const ContactContent = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
+  max-width: 800px;
+  text-align: left;
   font-size: 50px;
   font-weight: 50;
   line-height: 1;
-  padding-top: 100px;
+  display: flex;
   flex-direction: column;
   gap: 56px;
+  box-sizing: border-box;
 `;
 
 const HoverEventTag = styled.div`
@@ -186,7 +197,7 @@ const HoverEventTag = styled.div`
   }
 `;
 
-export { HoverEventTag, ContactContent, ContactTitle, ContactContainer }
+export { HoverEventTag, ContactContent, ContactTitle, ContactContainer, ContactContentWrapper }
 
 // Footer
 
