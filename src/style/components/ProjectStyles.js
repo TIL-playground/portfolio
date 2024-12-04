@@ -6,6 +6,16 @@ export const ProjectsTitle = styled.div`
   font-weight: 500;
   padding-top: 120px;
   padding-left: 97px;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+    padding-left: 40px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 40px;
+    padding-left: 20px;
+  }
 `;
 
 export const ProjectContainer = styled.div`
@@ -22,6 +32,18 @@ export const ProjectContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-top: 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
   }
 `;
 
@@ -122,10 +144,17 @@ export const ProjectStack = styled.div`
   display: flex;
   gap: 5px;
   justify-content: ${props => props.alignRight ? 'flex-end' : 'flex-start'};
+  flex-wrap: wrap;
 
   @media (max-width: 768px) {
     margin-top: 40px;
     margin-bottom: 10px;
+    justify-content: ${props => props.alignRight ? 'flex-end' : 'flex-start'};
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 30px;
+    justify-content: center;
   }
 `;
 

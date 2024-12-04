@@ -19,13 +19,30 @@ export const CertificationContainer = styled.div`
   }
 
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90%;
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    width: 95%;
+    padding: 12px;
+    flex-direction: column;
+    gap: 10px;
   }
 `;
 
 export const CertificationName = styled.span`
   font-size: 24px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    text-align: center;
+  }
 `;
 
 export const CertificationLine = styled.div`
@@ -33,8 +50,26 @@ export const CertificationLine = styled.div`
   height: 1px;
   background-color: white;
   margin: 0 10px;
+
+  @media (max-width: 768px) {
+    margin: 0 8px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    margin: 5px 0;
+  }
 `;
 
 export const CertificationDate = styled.span`
   font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+    text-align: center;
+  }
 `;

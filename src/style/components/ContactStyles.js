@@ -9,6 +9,17 @@ export const ContactContainer = styled.div`
   flex-direction: column;
   align-items: center;
   height: 1550px;
+
+  @media (max-width: 768px) {
+    height: auto;
+    min-height: 1200px;
+    padding: 1.5rem 0;
+  }
+
+  @media (max-width: 480px) {
+    min-height: 1000px;
+    padding: 1rem 0;
+  }
 `;
 
 export const Title1 = styled.div`
@@ -17,6 +28,31 @@ export const Title1 = styled.div`
   font-size: 200px;
   font-weight: 300;
   text-align: center;
+
+  @media (max-width: 1440px) {
+    font-size: 180px;
+    padding: 160px 0;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 150px;
+    padding: 150px 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 100px;
+    padding: 120px 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 60px;
+    padding: 80px 0;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 45px;
+    padding: 60px 0;
+  }
 `;
 
 export const ContactContentWrapper = styled.div`
@@ -24,6 +60,14 @@ export const ContactContentWrapper = styled.div`
   justify-content: center;
   width: 100%;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+    padding-top: 80px;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 60px;
+  }
 `;
 
 export const ContactContent = styled.div`
@@ -37,6 +81,25 @@ export const ContactContent = styled.div`
   flex-direction: column;
   gap: 56px;
   box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    max-width: 700px;
+    font-size: 45px;
+    gap: 48px;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 600px;
+    font-size: 35px;
+    gap: 40px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+    font-size: 25px;
+    gap: 32px;
+  }
 `;
 
 export const HoverEventTag = styled.div`
@@ -45,5 +108,17 @@ export const HoverEventTag = styled.div`
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  @media (max-width: 480px) {
+    &:hover {
+      transform: scale(1.03);
+    }
   }
 `;
