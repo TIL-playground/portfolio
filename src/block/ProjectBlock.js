@@ -23,7 +23,6 @@ const projectArray = [
         notionLink: "https://usadapekora.notion.site/DSM-48506e0449a24fbea9b1e563f3be4f53",
     },
     {
-        alignRight: true,
         title: "Repo",
         description: "Repo is DSM\nresume platform :)",
         imageSrc: repo_img,
@@ -57,10 +56,10 @@ const ProjectBlock = () => {
             <ProjectsTitle>Projects</ProjectsTitle>
 
             <ProjectContents>
-                {projectArray.map((project) => (
+                {projectArray.map((project, index) => (
                     <Project
                         key={project.title}
-                        alignRight={project.alignRight || false}
+                        alignRight={index % 2 === 1}
                         imageSrc={project.imageSrc}
                         imageAlt={project.imageAlt}
                         title={project.title}
