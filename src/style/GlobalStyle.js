@@ -7,5 +7,17 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Pretendard', sans-serif;
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  * {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
   }
 `;
