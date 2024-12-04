@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { BodyText } from "../style/Styled";
+import { BodyText } from "../style";
 
 const PortfolioTextBlock = () => {
     const [text, setText] = useState("");
@@ -59,10 +59,10 @@ const PortfolioTextBlock = () => {
     }, [isVisible]);
 
     return (
-        <BodyText ref={textRef} isVisible={isVisible}>
-            {text}
-            <span className="cursor">|</span>
-        </BodyText>
+      <BodyText ref={textRef} isVisible={isVisible}>
+          {text}
+          <span className="cursor">|</span>
+      </BodyText>
     )
 }
 

@@ -1,7 +1,11 @@
 import React, { lazy } from "react";
 import ToastObserver from "./components/ToastObserver";
 import PortfolioTextBlock from "./block/PortfolioTextBlock";
-import { GlobalStyle, Portfolio, PortfolioBody, BodyContent, MarginDiv } from './style/Styled'
+import SkillBlock from "./block/SkillBlock";
+import CertificationBlock from "./block/CertificationBlock";
+import ContributeBlock from "./block/ContributeBlock";
+import ExperienceBlock from "./block/ExperienceBlock";
+import { BlackBlock, BodyContent, GlobalStyle, Margin100, Portfolio } from "./style";
 
 const Contact = lazy(() => import("./components/Contact"));
 const Footer = lazy(() => import("./components/Footer"));
@@ -13,25 +17,39 @@ function App() {
   return (
     <>
       <GlobalStyle />
+
       <Portfolio>
         
-        <PortfolioBody>
-          <PortfolioTextBlock />
+        <BlackBlock>
+            <PortfolioTextBlock />
 
-          <BodyContent>
-            <IntroduceBlock />
-            <HyperlinkBlock />
-          </BodyContent>
-
-        </PortfolioBody>
+            <BodyContent>
+              <IntroduceBlock />
+              <HyperlinkBlock />
+            </BodyContent>
+        </BlackBlock>
 
         <ToastObserver message="자세히 보기를 클릭해서 프로젝트를 자세하게 확인하세요!">
           <ProjectBlock />
         </ToastObserver>
+        
+        <BlackBlock>
+          <ContributeBlock />
+        </BlackBlock>
 
-        <MarginDiv />
+        <SkillBlock />
 
-        <Contact />
+        <BlackBlock>
+          <CertificationBlock />
+        </BlackBlock>
+
+        <ExperienceBlock />
+
+        <Margin100 />
+
+        <BlackBlock>
+          <Contact />
+        </BlackBlock>
 
         <Footer />
       </Portfolio>

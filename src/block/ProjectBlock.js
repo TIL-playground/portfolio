@@ -5,12 +5,13 @@ import repo_logo from "../imgs/repo-logo.svg";
 import founderz_img from "../imgs/founderz.svg";
 import founderz_logo from "../imgs/founderz-logo.svg";
 import Project from "../components/Project";
-import { ProjectsTitle } from "../style/Styled";
+import { ProjectsTitle } from "../style";
+import styled from "styled-components";
 
 const projectArray = [
     {
         title: "Daemawiki",
-        description: "Daemawiki is DSM\nwiki platform :>",
+        description: "Daemawiki is DSM\nwiki service :>",
         imageSrc: daemawiki_img,
         imageAlt: "daemawiki image",
         imageLink: "https://daemawiki.xquare.com/",
@@ -37,7 +38,7 @@ const projectArray = [
     },
     {
         title: "Founderz",
-        description: "Founderz is Blockchain-Based\nStartup Investment Platform :]",
+        description: "Founderz is blockchain-based\nstartup investment platform :]",
         imageSrc: founderz_img,
         imageAlt: "founderz image",
         imageLink: "https://founderz.xquare.app/",
@@ -55,7 +56,7 @@ const ProjectBlock = () => {
         <>
             <ProjectsTitle>Projects</ProjectsTitle>
 
-            <>
+            <ProjectContents>
                 {projectArray.map((project) => (
                     <Project
                         key={project.title}
@@ -72,9 +73,13 @@ const ProjectBlock = () => {
                         notionLink={project.notionLink}
                     />
                 ))}
-            </>
+            </ProjectContents>
         </>
     )
 }
 
-export default ProjectBlock
+const ProjectContents = styled.div`
+    padding-bottom: 120px;
+`;  
+
+export default ProjectBlock;

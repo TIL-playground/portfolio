@@ -1,0 +1,10 @@
+export { GlobalStyle } from './GlobalStyle';
+export * from './components/PortfolioStyles';
+export * from './components/IntroStyles';
+export * from './components/ProjectStyles';
+export * from './components/ContactStyles';
+export * from './components/FooterStyles';
+export * from './components/CommonStyles';
+export * from './components/CertificationStyles';
+export * from './components/SkillBlockStyles';
+export * from './components/OpenSourceStyles';

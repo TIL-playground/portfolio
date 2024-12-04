@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 
-const Logo = ({ 
-  text = "Your Logo Text",
+const Skill = ({ 
+  text = "Your Skill Text",
   strokeColor = "#BEBEBE",
   fillColor = "#1C194A",
-  backgroundColor = "transparent", // New prop for background color
+  backgroundColor = "transparent",
   fontSize = 25,
   fontFamily = "'Apple SD Gothic Neo', sans-serif",
   fontWeight = "bold",
@@ -62,4 +62,4 @@ const Logo = ({
   );
 };
 
-export default Logo;
+export default Skill;

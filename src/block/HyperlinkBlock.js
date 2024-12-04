@@ -5,7 +5,7 @@ import velog_logo from "../imgs/Veloglogo.png";
 import medium_logo from "../imgs/Mediumlogo.png";
 import readcv_logo from "../imgs/Readcvlogo.png";
 import React from 'react';
-import { HyperlinkContainer, HyperlinkImg } from '../style/Styled';
+import { HyperlinkContainer, HyperlinkImg } from '../style';
 
 const SOCIAL_LINKS = [
   {
