@@ -1,12 +1,12 @@
 import { Title1 } from "../style";
 import { 
-    OpenSourceContainer, 
-    OpenSourceItem,
-    OpenSourceContent,
+    ContributeContainer, 
+    ContributeItem,
+    ContributeContent,
     RepoName,
     Description,
     PRLink
-} from "../style/components/OpenSourceStyles";
+} from "../style/components/ContributeStyles";
 
 const contributions = [
     {
@@ -25,10 +25,10 @@ const ContributeBlock = () => {
     return (
         <>
             <Title1>Contribute</Title1>
-            <OpenSourceContainer>
+            <ContributeContainer>
                 {contributions.map((contribution, index) => (
-                    <OpenSourceItem key={index}>
-                        <OpenSourceContent>
+                    <ContributeItem key={index}>
+                        <ContributeContent>
                             <RepoName>{contribution.repoName}</RepoName>
                             <Description>{contribution.description}</Description>
                             <PRLink 
@@ -38,10 +38,10 @@ const ContributeBlock = () => {
                             >
                                 github pull request
                             </PRLink>
-                        </OpenSourceContent>
-                    </OpenSourceItem>
+                        </ContributeContent>
+                    </ContributeItem>
                 ))}
-            </OpenSourceContainer>
+            </ContributeContainer>
         </>
     );
 };

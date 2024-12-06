@@ -7,4 +7,4 @@ export * from './components/FooterStyles';
 export * from './components/CommonStyles';
 export * from './components/CertificationStyles';
 export * from './components/SkillBlockStyles';
-export * from './components/OpenSourceStyles';
+export * from './components/ContributeStyles';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const OpenSourceContainer = styled.div`
+export const ContributeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +9,7 @@ export const OpenSourceContainer = styled.div`
   padding-bottom: 150px;
 `;
 
-export const OpenSourceItem = styled.div`
+export const ContributeItem = styled.div`
   display: flex;
   align-items: center;
   margin: 10px auto;
@@ -28,7 +28,7 @@ export const OpenSourceItem = styled.div`
   }
 `;
 
-export const OpenSourceContent = styled.div`
+export const ContributeContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
