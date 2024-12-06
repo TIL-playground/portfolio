@@ -46,7 +46,6 @@ const CategoryTitle = styled.h2`
     font-size: 30px;
     margin: 40px 0 20px;
     font-weight: 600;
-    opacity: 0.8;
 
     @media (max-width: 768px) {
         font-size: 26px;

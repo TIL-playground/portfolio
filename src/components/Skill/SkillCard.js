@@ -2,14 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
-  background: transparent;
-  padding: 15px 21px;
-  border: 1.5px solid #e6e6e6;
-  border-radius: 30px;
+  padding: 15px 25px;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
-  transition: all 0.2s ease;
-  cursor: default;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  will-change: transform, background-color;
 
   &:hover {
     background: #1C194A;
@@ -18,10 +16,12 @@ const Card = styled.div`
     span {
       color: snow;
     }
+    
+    transform: scale(1.05);
   }
 
   @media (max-width: 768px) {
-    padding: 12px 18px;
+    padding: 12px 20px;
   }
 
   @media (max-width: 480px) {
@@ -31,16 +31,16 @@ const Card = styled.div`
 
 const SkillName = styled.span`
   color: #1C194A;
-  font-size: 15px;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Apple SD Gothic Neo', sans-serif;
 
   @media (max-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   @media (max-width: 480px) {
-    font-size: 13px;
+    font-size: 14px;
   }
 `;
 
