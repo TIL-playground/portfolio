@@ -6,7 +6,6 @@ import {
   ProjectStack 
 } from '../../style';
 import Skill from '../Skill/Skill';
-import { JAVA_CORNER_RADIUS } from './constants';
 
 export const ProjectTitleSection = ({ alignRight, title, logoSrc, logoAlt }) => (
   <ProjectTitleLogoContainer alignRight={alignRight}>
@@ -30,7 +29,7 @@ export const ProjectStackSection = ({ stack, alignRight }) => (
       <Skill 
         key={index} 
         text={tech} 
-        cornerRadius={tech === 'Java' ? JAVA_CORNER_RADIUS : undefined} 
+        cornerRadius={(index + 1) % 2 === 0 ? 30 : undefined} 
       />
     ))}
   </ProjectStack>
