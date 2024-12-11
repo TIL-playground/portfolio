@@ -30,11 +30,6 @@ export const Title1 = styled.div`
   transition: all 0.3s ease-in-out;
   letter-spacing: -2px;
 
-  &:hover {
-    transform: scale(1.02);
-    letter-spacing: 2px;
-  }
-
   @media (max-width: 1440px) {
     font-size: 160px;
     padding: 100px 0;
