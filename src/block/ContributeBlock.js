@@ -15,11 +15,17 @@ const contributions = [
         prLink: "https://github.com/kestra-io/kestra/pull/6073"
     },
     {
+        repoName: "redis/lettuce",
+        description: "refactor mget method improved readability and efficiency",
+        prLink: "https://github.com/redis/lettuce/pull/3061"
+    },
+    {
         repoName: "velog-io/velog",
         description: "change text style correctly.",
         prLink: "https://github.com/velog-io/velog/pull/49"
     },
 ];
+
 
 const ContributeBlock = () => {
     return (
